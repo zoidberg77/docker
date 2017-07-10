@@ -1,0 +1,14 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build test .
+  - docker run test
+  - docker run -p 4000:80 friendlyhello
+
+script:
+  - curl http://localhost:4000
