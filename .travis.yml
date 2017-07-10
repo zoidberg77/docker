@@ -6,8 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build test .
-  - docker run test
+  - docker build -t test .
   - docker run -p 4000:80 friendlyhello
 
 script:
